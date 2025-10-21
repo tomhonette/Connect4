@@ -1,9 +1,8 @@
 import numpy as np
 import pygame
 import sys
-import math
 from aiplayer1 import aiplayer1 as aiplayer1
-from aiplayer2 import AIPlayer as aiplayer2, AIPlayer
+from aiplayer1 import aiplayer1 as aiplayer2
 
 BLUE = (0,0,255)
 BLACK = (0,0,0)
@@ -138,8 +137,7 @@ while not game_over:
             else:               
                 #posx = event.pos[0]
                 #col = int(math.floor(posx/SQUARESIZE))
-                ai_player = AIPlayer()
-                col = ai_player.pick_move(board)
+                col = aiplayer2(board)
                 if is_valid_location(board, col):
                     row = get_next_open_row(board, col)
                     drop_piece(board, row, col, 2)
